@@ -1,4 +1,6 @@
-const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+import { API_BASE_URL } from '../config';
+
+const API_BASE = API_BASE_URL;
 
 export async function fetchHealth() {
   try {

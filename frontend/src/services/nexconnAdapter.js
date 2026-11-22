@@ -5,6 +5,8 @@
  * so multi-tab and split-screen multiplayer demo works with zero latency.
  */
 
+import { WS_BASE_URL } from '../config';
+
 class NexconnAdapter {
   constructor() {
     this.appId = import.meta.env.VITE_NEXCONN_APP_ID || 'nexconn-demo-app-8829';
@@ -39,8 +41,8 @@ class NexconnAdapter {
     this.userId = userId;
     this.userName = userName;
 
-    // Connect local WebSocket bridge
-    const wsUrl = (import.meta.env.VITE_WS_URL || 'ws://localhost:8000') + `/ws/${roomId}/${userId}`;
+    // Connect WebSocket bridge (supports wss:// on Render/Vercel and ws:// locally)
+    const wsUrl = `${WS_BASE_URL}/ws/${roomId}/${userId}`;
     try {
       this.ws = new WebSocket(wsUrl);
 

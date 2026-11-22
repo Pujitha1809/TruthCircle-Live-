@@ -54,9 +54,30 @@ app = FastAPI(
     version="1.0.0"
 )
 
+# ─── Production CORS Configuration (Vercel, Render & Local Dev) ──────────────
+frontend_url = os.getenv("FRONTEND_URL", "").strip()
+allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
+]
+if frontend_url:
+    allowed_origins.append(frontend_url.rstrip("/"))
+
+extra_origins = os.getenv("ALLOWED_ORIGINS", "")
+if extra_origins:
+    for origin in extra_origins.split(","):
+        o = origin.strip().rstrip("/")
+        if o and o not in allowed_origins:
+            allowed_origins.append(o)
+
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=allowed_origins,
+    allow_origin_regex=r"https://.*\.vercel\.app",
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

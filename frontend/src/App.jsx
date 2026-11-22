@@ -13,6 +13,7 @@ import {
   AlertTriangle
 } from 'lucide-react';
 
+import { API_BASE_URL } from './config';
 import DemoControlBar from './components/DemoControlBar';
 import ChatPane from './components/ChatPane';
 import EvidenceDrawer from './components/EvidenceDrawer';
@@ -331,7 +332,7 @@ export default function App() {
     setIsLoading(true);
     setTypingStatus({ is_typing: true, sender_name: 'TruthCircle AI' });
     try {
-      const API_BASE = import.meta.env.VITE_API_URL || 'http://localhost:8000';
+      const API_BASE = API_BASE_URL;
       const res = await fetch(`${API_BASE}/api/verify`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
