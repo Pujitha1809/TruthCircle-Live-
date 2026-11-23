@@ -2,6 +2,7 @@
 
 # 🛡️ TruthCircle — Real-Time Multiplayer Misinformation Firewall for Group Chats
 
+
 ### *Stopping viral rumors, financial scams, and doctored media inside encrypted group threads before they spread.*
 
 [![Buildathon](https://img.shields.io/badge/Beyond_9to5_Buildathon-Grand_Submission-FF6B6B?style=for-the-badge&logo=rocket)](https://github.com/Pujitha1809/TruthCircle-Live-)
@@ -15,6 +16,8 @@
 [![MongoDB](https://img.shields.io/badge/Storage-MongoDB_Atlas_%2B_Disk_Fallback-47A248?style=flat-square&logo=mongodb)](https://mongodb.com)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
 
+
+RKUWPF
 ---
 
 ### [🌐 Live GitHub Repository](https://github.com/Pujitha1809/TruthCircle-Live-) • [⚡ Architecture](#-system-architecture) • [🏆 Sponsor Deep-Dive](#-authentic-multi-sponsor-deep-dive) • [🚀 Quickstart](#-quickstart--local-setup)
