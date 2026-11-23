@@ -50,34 +50,34 @@ TruthCircle was engineered specifically to highlight the combined power of **Nex
 
 ```mermaid
 flowchart TD
-    subgraph Client["📱 Frontend Client (React 18 + Vite + Tailwind)"]
-        UserA["👤 User A (Rohan)"]
-        UserB["👵 User B (Maa)"]
-        OCR["🖼️ In-Browser OCR (Tesseract.js)"]
-        ChatUI["💬 Dual-Pane Chat & Live 5-Step Bubble"]
-        RadarUI["📊 Misinformation Radar & Compliance Modal"]
+    subgraph Client["Frontend Client - React 18 + Vite + Tailwind"]
+        UserA["User A - Rohan"]
+        UserB["User B - Maa"]
+        OCR["In-Browser OCR - Tesseract.js"]
+        ChatUI["Dual-Pane Chat and Live 5-Step Bubble"]
+        RadarUI["Misinformation Radar and Compliance Modal"]
     end
 
-    subgraph SyncLayer["⚡ Real-Time Multiplayer Sync"]
+    subgraph SyncLayer["Real-Time Multiplayer Sync"]
         Nexconn["Nexconn Chat SDK / WebSocket Bridge"]
         BC["BroadcastChannel Sync Bus"]
     end
 
-    subgraph Backend["🛡️ Backend Firewall (FastAPI Async Orchestrator)"]
-        Guard["⚡ Layer 1: <15ms Spam & Phishing Guard\n(UPI / KYC / Electricity / Lottery Regex)"]
-        Orchestrator["🔄 Layer 2: Async Verification Orchestrator\n(asyncio.gather Parallel Dispatch)"]
+    subgraph Backend["Backend Firewall - FastAPI Async Orchestrator"]
+        Guard["Layer 1: Spam and Phishing Guard - UPI / KYC / Lottery Regex"]
+        Orchestrator["Layer 2: Async Verification Orchestrator - asyncio.gather"]
     end
 
-    subgraph SponsorEngines["🌐 Multi-Sponsor Fact-Checking Pipeline"]
-        SerpNews["📰 SerpApi Google News\n(gl='in', Indian Outlet Consensus)"]
-        SerpHunt["🕵️ SerpApi Fact-Check Hunter\n(PIB / AltNews / BOOM Live)"]
-        SerpExt["📄 SerpApi Deep Extract\n(engine='extract', output='md')"]
-        YouRAG["🤖 You.com Cited Research API\n(Semantic Web RAG + Domain Trust)"]
+    subgraph SponsorEngines["Multi-Sponsor Fact-Checking Pipeline"]
+        SerpNews["SerpApi Google News - Indian Outlet Consensus"]
+        SerpHunt["SerpApi Fact-Check Hunter - PIB / AltNews / BOOM Live"]
+        SerpExt["SerpApi Deep Extract - engine=extract, output=md"]
+        YouRAG["You.com Cited Research API - Semantic Web RAG"]
     end
 
-    subgraph Storage["💾 Resilient Multi-Tier Persistence (TruthCircleDB)"]
-        Mongo["🍃 MongoDB Atlas (Primary Cloud)\ncollections: rooms, messages, audit_logs"]
-        Disk["💾 Local JSON Disk Fallback\nbackend/data/truthcircle_db.json"]
+    subgraph Storage["Resilient Multi-Tier Persistence - TruthCircleDB"]
+        Mongo["MongoDB Atlas - Primary Cloud - rooms, messages, audit_logs"]
+        Disk["Local JSON Disk Fallback - backend/data/truthcircle_db.json"]
     end
 
     UserA -->|Send Text or Paste Screenshot| OCR
@@ -86,7 +86,7 @@ flowchart TD
     ChatUI <--> Nexconn
     Nexconn <--> BC
     Nexconn -->|WebSocket Payload| Guard
-    Guard -->|Safe / Flagged| Orchestrator
+    Guard -->|Safe or Flagged| Orchestrator
 
     Orchestrator -->|Parallel Request 1| SerpNews
     Orchestrator -->|Parallel Request 2| SerpHunt
@@ -101,7 +101,7 @@ flowchart TD
     Orchestrator -->|Synthesize Credibility Card| Backend
     Backend -->|Broadcast NEW_MESSAGE / Card| Nexconn
     Backend -->|Persist Room / Message / Audit| Storage
-    Storage -->|Ping Failover (3s timeout)| Disk
+    Storage -->|Ping Failover - 3s timeout| Disk
     Storage -->|Online| Mongo
     Backend -->|Audit Logs| RadarUI
 ```
